@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Componentes</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background-color: #f4f4f4; }
+        fieldset { background-color: white; border: 2px solid #ccc; border-radius: 8px; }
+        legend { font-weight: bold; color: #333; }
+        .form-group { margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+
+    <h1>Gestión de Inventario (Laboratorio TSU)</h1>
+
+    <form action="/action_page.php" oninput="total.value=parseInt(stock.value)+parseInt(nuevo.value)">
+        
+        <fieldset>
+            <legend>Información del Técnico:</legend>
+            <label for="fname">Nombre:</label>
+            <input type="text" id="fname" name="fname">
+            <br><br>
+
+            <label for="marca">Marca del equipo:</label>
+            <input list="marcas" name="marca" id="marca">
+            <datalist id="marcas">
+                <option value="HP">
+                <option value="Dell">
+                <option value="ZTE">
+                <option value="Asus">
+                <option value="Chevrolet"> </datalist>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Detalles del Componente:</legend>
+
+            <label for="tipo">Tipo de Hardware:</label>
+            <select id="tipo" name="tipo">
+                <option value="cpu">Procesador</option>
+                <option value="ram">Memoria RAM</option>
+                <option value="gpu" selected>Tarjeta de Video</option>
+                <option value="mobo">Placa Base</option>
+            </select>
+            <br><br>
+
+            <label for="perifericos">Periféricos dañados (Ctrl + Click):</label><br>
+            <select id="perifericos" name="perifericos" size="4" multiple>
+                <option value="mouse">Mouse</option>
+                <option value="teclado">Teclado</option>
+                <option value="monitor">Monitor</option>
+                <option value="flex">Flex de encendido</option>
+            </select>
+            <br><br>
+
+            <label for="notas">Notas de diagnóstico:</label><br>
+            <textarea name="notas" rows="4" cols="50" style="width:100%; height:100px;">
+Ingresa los detalles de la falla aquí...
+            </textarea>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Cálculo de Existencias:</legend>
+            <label for="stock">Stock Actual:</label>
+            0 <input type="range" id="stock" name="stock" value="10"> 100
+            <br><br>
+            <label for="nuevo">Nuevas Unidades:</label>
+            <input type="number" id="nuevo" name="nuevo" value="0">
+            <br><br>
+            <strong>Total en Almacén:</strong> 
+            <output name="total" for="stock nuevo"></output>
+        </fieldset>
+
+        <br>
+        <button type="button" onclick="alert('¡Validando datos con la base de datos!')">Verificar Conexión</button>
+        <input type="submit" value="Guardar en SQL Server">
+    </form>
+
+</body>
+</html>
+
+<!-- <label for="fname">First name:</label>
+<input type="text" id="fname" name="fname">
+
+<label for="cars">Choose a car:</label>
+<select id="cars" name="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi">Audi</option>
+</select>
+
+<option value="fiat" selected>Fiat</option>
+
+<label for="cars">Choose a car:</label>
+<select id="cars" name="cars" size="3">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi">Audi</option>
+</select>
+
+<label for="cars">Choose a car:</label>
+<select id="cars" name="cars" size="4" multiple>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi">Audi</option>
+</select>
+
+<textarea name="message" rows="10" cols="30">
+The cat was playing in the garden.
+</textarea>
+
+<textarea name="message" style="width:200px; height:600px;">
+The cat was playing in the garden.
+</textarea>
+
+<button type="button" onclick="alert('Hello World!')">Click Me!</button>
+
+<form action="/action_page.php">
+  <fieldset>
+    <legend>Personalia:</legend>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value="John"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value="Doe"><br><br>
+    <input type="submit" value="Submit">
+  </fieldset>
+</form>
+
+<form action="/action_page.php">
+  <input list="browsers">
+  <datalist id="browsers">
+    <option value="Edge">
+    <option value="Firefox">
+    <option value="Chrome">
+    <option value="Opera">
+    <option value="Safari">
+  </datalist>
+</form>
+
+<form action="/action_page.php"
+  oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+  0
+  <input type="range"  id="a" name="a" value="50">
+  100 +
+  <input type="number" id="b" name="b" value="50">
+  =
+  <output name="x" for="a b"></output>
+  <br><br>
+  <input type="submit">
+</form> -->

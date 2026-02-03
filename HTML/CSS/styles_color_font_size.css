@@ -1,0 +1,52 @@
+/* Estilos para el simulador de Terminal */
+
+body {
+    background-color: #0c0c0c; /* Negro profundo tipo consola */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    color: #00ff00; /* Verde neón clásico */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 250%;
+    text-shadow: 0 0 10px #00ff00; /* Efecto de brillo */
+}
+
+p {
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 120%;
+    
+    /* Aplicando el Box Model que vimos */
+    border: 1px solid #333333; /* Borde sutil */
+    padding: 20px;             /* Espacio interno para que el texto respire */
+    margin: 20px;              /* Espacio externo */
+    
+    background-color: #1e1e1e; /* Fondo gris oscuro para la "ventana" */
+    border-radius: 5px;        /* Bordes redondeados */
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5); /* Sombra para dar profundidad */
+    
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+/* Estilo para resaltar comandos o rutas */
+strong {
+    color: #f1c40f; /* Amarillo para resaltar (como en Bash) */
+}
+
+/* Efecto de cursor parpadeante */
+p::after {
+    content: "🎮";
+    animation: cursor 1s infinite;
+}
+
+@keyframes cursor {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
